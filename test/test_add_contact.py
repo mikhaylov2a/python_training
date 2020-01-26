@@ -12,7 +12,7 @@ def app(request):
 
 
 def test_add_contact(app):
-    app.login("admin", "secret")
+    app.session.login("admin", "secret")
     app.create_contact(Contact(firstname="john", middlename="j", lastname="smith", nickname="neo",
                                title="title", companyname="RealCo", firstaddress="1st Street",
                                homephone="666666", mobilephone="+79657766664", workphone="666666 6",
@@ -20,4 +20,4 @@ def test_add_contact(app):
                                secondemail="johnsmith2@email.com", thirdemail="johnsmith3@email.com",
                                homepage="https://smith.net", secondaddress="2nd Street", phone2="3rd NY",
                                notes="Just New Guy"))
-    app.logout()
+    app.session.logout()
